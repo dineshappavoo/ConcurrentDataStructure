@@ -4,13 +4,14 @@
 package ConcurrentBSTWithOutRecursion;
 
 /**
- * @author Dany
+ * @author Dinesh Appavoo
  *
  */
 
 public class BST
 {
 	private TreeNode parentHead;
+	//Public constructor for BST
 	public BST()
 	{
 		parentHead=new TreeNode(Integer.MAX_VALUE);	
