@@ -3,6 +3,8 @@
  */
 package ConcurrentBSTWithOutRecursion;
 
+import java.util.Stack;
+
 /**
  * @author Dinesh Appavoo
  *
@@ -182,6 +184,83 @@ public class BST
 	{
 		inOrderTraversal(parentHead.left);
 	}
+
+	public void treeInOrderTraversal(TreeNode root)
+
+	{
+
+		TreeNode current=root;
+
+		if(root==null)
+
+			return;
+
+		while(current!=null)
+
+		{
+
+			if(current.left==null)
+
+			{
+
+				System.out.println(current.key);
+
+				current=current.right;
+
+			}else
+
+			{
+
+				TreeNode temp=current.left;
+
+				while(temp.right!=null&&temp.right!=current)
+					temp=temp.right;
+				if(temp.right==null)
+
+				{
+					temp.right=current;
+					current=current.left;
+				}else
+
+				{
+					temp.right=null;
+					System.out.println(current.key);
+					current=current.right;
+				}
+			}
+		}
+	}
+
+	public void inOrderUsingStack(TreeNode root)
+	{
+		if(root==null)
+			return;
+		TreeNode current=root;
+		Stack<TreeNode> S=new Stack<TreeNode>();
+		boolean done=false;
+		while(!done)
+		{
+			if(current.left!=null)
+			{
+				S.push(current);
+				current=current.left;
+			}else 
+
+			{
+				if(!S.isEmpty())
+				{
+					TreeNode temp=S.pop();
+					System.out.println(temp.key);
+					current=current.right;
+				}else
+				{
+					done=true;
+				}
+			}
+		}
+	}
+
+
 	public void inOrderTraversal(TreeNode root)
 	{
 		if(root==null)
