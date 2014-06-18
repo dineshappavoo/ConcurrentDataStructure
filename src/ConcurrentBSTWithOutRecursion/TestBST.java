@@ -24,7 +24,7 @@ public class TestBST {
 
 
 		
-		//bst.inOrderTraversal();
+		bst.inOrderTraversal();
 		boolean isTrue=bst.delete(90);
 		System.out.println("Deleted?"+isTrue);
 		
