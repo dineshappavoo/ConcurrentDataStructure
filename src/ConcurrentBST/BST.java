@@ -4,7 +4,7 @@
 package ConcurrentBST;
 
 /**
- * @author Dany
+ * @author Dinesh Appavoo
  *
  */
 
